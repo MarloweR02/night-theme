@@ -1,0 +1,119 @@
+<script src={{ 'announcement-bar.js' |  asset_url }} defer></script>
+
+<announcement-bar class="announcement-bar">
+  <div class="announcement-bar__inner page-width">
+    <div class="announcement-bar__wrapper">
+      <div class="announcement-nav announcement-icon" announcement-prev>
+        {{ "icon-chevron-left.svg" | inline_asset_content }}
+      </div>
+       <div class="announcement-container">
+        <div class="announcement-carousel" announcement-carousel>
+          {% for block in section.blocks %}
+            <p class="announcement-message" announcement-message>{{ block.settings.announcement }}</p>
+          {% endfor %}
+          </div>
+       </div>
+      <div class="announcement-nav announcement-icon" announcement-next>
+        {{ "icon-chevron-right.svg" | inline_asset_content }}
+      </div>
+    </div>
+    <div class="announcement-bar__close-icon announcement-icon" announcement-remove>
+      {{ "icon-x-mark.svg" | inline_asset_content }}
+    </div>
+  </div>
+</announcement-bar>
+
+<style>
+  .announcement-bar{
+    padding: 0.4rem 0.8rem;
+    display: block;
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  .announcement-bar__inner{
+    display: flex;
+    align-items: center;
+  }
+
+  .announcement-icon{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .announcement-icon > svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    color: {{ section.settings.text_color }};
+  }
+  
+  .announcement-message{
+    color: {{ section.settings.text_color }};
+  }
+
+  .announcement-bar__wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .announcement-container{
+    margin: 0 2rem;
+    max-width: 400px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .announcement-carousel{
+    width: 100%;
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+
+  .announcement-message{
+    flex: 0 0 100%;
+    text-align: center;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "announcement",
+          "label": "Announcement",
+          "default":"Get 50% off on your 1st purchase"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement bar"
+    }
+  ]
+}
+{% endschema %}
