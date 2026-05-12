@@ -11,6 +11,39 @@
   "type": "header",
   "name": "Header Group",
   "sections": {
+    "announcement_bar_ftaLw7": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_j69nP3": {
+          "type": "announcement",
+          "settings": {
+            "announcement": "Get 50% off on your 1st purchase"
+          }
+        },
+        "announcement_qBYVDX": {
+          "type": "announcement",
+          "settings": {
+            "announcement": "Get 50% off on your 1st purchase"
+          }
+        },
+        "announcement_GmVFBL": {
+          "type": "announcement",
+          "settings": {
+            "announcement": "Get 50% off on your 1st purchase"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_j69nP3",
+        "announcement_qBYVDX",
+        "announcement_GmVFBL"
+      ],
+      "name": "Announcement bar",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#ffffff"
+      }
+    },
     "header": {
       "type": "header",
       "settings": {
@@ -20,6 +53,7 @@
     }
   },
   "order": [
+    "announcement_bar_ftaLw7",
     "header"
   ]
 }
