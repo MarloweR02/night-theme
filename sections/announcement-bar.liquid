@@ -9,7 +9,7 @@
        <div class="announcement-container">
         <div class="announcement-carousel" announcement-carousel>
           {% for block in section.blocks %}
-            <p class="announcement-message" announcement-message>{{ block.settings.announcement }}</p>
+            <p class="announcement-message" announcement-message {{ block.shopify_attributes }}>{{ block.settings.announcement }}</p>
           {% endfor %}
           </div>
        </div>
@@ -88,12 +88,14 @@
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Background color"
+      "label": "Background color",
+      "default":"#000"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Text color"
+      "label": "Text color",
+      "default":"#fff"
     }
   ],
   "blocks": [
