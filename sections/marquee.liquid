@@ -1,0 +1,121 @@
+<div class="marquee">
+  <div class="marquee-track">
+    {% for i in (1..6) %}
+      <div class="marquee-group">
+        {% for block in section.blocks %}
+          <span class="marquee-item">{{ block.settings.text }}</span>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+<style>
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0;
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee {{ section.settings.duration }}s linear infinite;
+  }
+
+  .marquee-group {
+    display: flex;
+    white-space: nowrap;
+    gap: {{ section.settings.spacing }}px;
+    padding-right: {{ section.settings.spacing }}px;
+  }
+
+  .marquee-item {
+    font-size: 20px;
+    color: {{ section.settings.text_color }};
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Marquee",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#000"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "text color",
+        "default": "#fff"
+      }, {
+        "type": "range",
+        "id": "spacing",
+        "label": "Spacing",
+        "min": 10,
+        "max": 100,
+        "step": 10,
+        "default": 30,
+        "unit": "px"
+      }, {
+        "type": "range",
+        "id": "duration",
+        "label": "Duration",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "default": 15,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Logo text",
+            "default": "MolecularDev"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Marquee",
+        "blocks": [
+          {
+            "type": "text"
+          },
+
+          {
+            "type": "text"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "text"
+          }, {
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,15 @@
+  
+  .accordion-answer__container {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease-out;
+  }
+
+  .accordion-answer {
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .accordion-checkbox:checked ~ .accordion-answer__container {
+    grid-template-rows: 1fr;
+  }
