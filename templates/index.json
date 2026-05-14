@@ -104,7 +104,6 @@
     },
     "hero": {
       "type": "hero",
-      "disabled": true,
       "settings": {
         "bg_color": "#000000",
         "hero_title": "Skeleton Theme"
@@ -112,8 +111,8 @@
     }
   },
   "order": [
+    "hero",
     "faq_LMGX4K",
-    "marquee_m4zLjR",
-    "hero"
+    "marquee_m4zLjR"
   ]
 }
