@@ -1,12 +1,12 @@
 <div class="faq">
   <div class="faq__wrapper page-width">
     <div class="faq__header">
-      <h2 class="faq__heading">{{ section.settings.title }}</h2>
-      <p class="faq__description">{{ section.settings.description }}</p>
+      <h2 class="faq__heading fade-in-up">{{ section.settings.title }}</h2>
+      <p class="faq__description fade-in-up">{{ section.settings.description }}</p>
     </div>
     <div class="faq__body">
       {% for block in section.blocks %}
-        <div class="accordion-item" {{ block.shopify_attributes }}>
+        <div class="accordion-item fade-in-up" {{ block.shopify_attributes }}>
           <input type="checkbox" id="accordion-{{ forloop.index }}" class="accordion-checkbox">
           <label for="accordion-{{ forloop.index }}" class="accordion-question"> {{ block.settings.question }}</label>
           <div class="accordion-answer__container">
