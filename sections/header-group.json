@@ -11,37 +11,37 @@
   "type": "header",
   "name": "Header Group",
   "sections": {
-    "announcement_bar_ftaLw7": {
+    "announcement_bar_Bd7iBc": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_j69nP3": {
+        "announcement_EWbTPg": {
           "type": "announcement",
           "settings": {
-            "announcement": "Get 50% off on your 1st purchase"
+            "announcement": "Marlowe is the best developer in the world"
           }
         },
-        "announcement_qBYVDX": {
+        "announcement_jpmthD": {
           "type": "announcement",
           "settings": {
-            "announcement": "Get 50% off on your 1st purchase"
+            "announcement": "I'll become a professional developer soon"
           }
         },
-        "announcement_GmVFBL": {
+        "announcement_zfd8ak": {
           "type": "announcement",
           "settings": {
-            "announcement": "Get 50% off on your 1st purchase"
+            "announcement": "Please hire me I really need a job"
           }
         }
       },
       "block_order": [
-        "announcement_j69nP3",
-        "announcement_qBYVDX",
-        "announcement_GmVFBL"
+        "announcement_EWbTPg",
+        "announcement_jpmthD",
+        "announcement_zfd8ak"
       ],
       "name": "Announcement bar",
       "settings": {
-        "bg_color": "#000000",
-        "text_color": "#ffffff"
+        "bg_color": "#000",
+        "text_color": "#fff"
       }
     },
     "header": {
@@ -53,7 +53,7 @@
     }
   },
   "order": [
-    "announcement_bar_ftaLw7",
+    "announcement_bar_Bd7iBc",
     "header"
   ]
 }
