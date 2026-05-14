@@ -21,7 +21,9 @@
     <div class="header__right">
       <div class="svg-wrapper">{{ "icon-magnifying-glass.svg" | inline_asset_content }}</div>
       <div class="svg-wrapper">{{ "icon-user.svg" | inline_asset_content }}</div>
-      <div class="svg-wrapper cart-open-trigger">{{ "icon-shopping-cart.svg" | inline_asset_content }}</div>
+      <div class="svg-wrapper cart-open-trigger">{{ "icon-shopping-cart.svg" | inline_asset_content }}
+        {% render "cart-count" %}
+      </div>
     </div>
   </div>
 </div>
@@ -37,6 +39,11 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .cart-open-trigger{
+    position: relative;
+  }
+  
 
   .header__left{
     display: flex;
