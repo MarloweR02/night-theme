@@ -6,7 +6,7 @@
           {% if settings.logo != blank %}
           {{ settings.logo |  image_url: width: settings.logo_width | image_tag  }}
         {% else %}
-          <h2>{{ shop.name }}</h2>
+          <h2 class="header__logo-text">{{ shop.name }}</h2>
         {% endif %}
         </a>
       </div>
@@ -32,6 +32,11 @@
   .header{
     padding: 1.2rem 0;
     background-color: {{ section.settings.bg_color }};
+  }
+
+  .header__logo > a{
+    color: inherit;
+    text-decoration: none;
   }
 
   .header__inner{
