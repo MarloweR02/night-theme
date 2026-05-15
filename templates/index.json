@@ -9,6 +9,22 @@
  */
 {
   "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "bg_color": "#000000",
+        "hero_title": "Skeleton Theme"
+      }
+    },
+    "featured_collection_T96d8C": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "title": "",
+        "description": "",
+        "collection": "featured"
+      }
+    },
     "faq_LMGX4K": {
       "type": "faq",
       "blocks": {
@@ -101,17 +117,11 @@
         "spacing": 30,
         "duration": 15
       }
-    },
-    "hero": {
-      "type": "hero",
-      "settings": {
-        "bg_color": "#000000",
-        "hero_title": "Skeleton Theme"
-      }
     }
   },
   "order": [
     "hero",
+    "featured_collection_T96d8C",
     "faq_LMGX4K",
     "marquee_m4zLjR"
   ]
