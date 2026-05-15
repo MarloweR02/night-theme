@@ -6,6 +6,7 @@
     {{ product.featured_image |  image_url: width: 400 |  image_tag  }}
     {% if product.compare_at_price %}
       <span class="product-card__discount">-{{ discount_percent }}%</span>
+      {% render "product-card-atc" product: product %}
     {% endif %}
   </div>
   <div class="product-card__content">
