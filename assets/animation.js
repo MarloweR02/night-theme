@@ -4,7 +4,7 @@ const observerFadeInUp = new IntersectionObserver((entries, observer)=>{
   entries.forEach((entry, index)=>{
     if(entry.isIntersecting){
       entry.target.classList.add('animate')
-      entry.target.style.animationDelay = `${index * 100}ms`
+      entry.target.style.animationDelay = `${index * 150}ms`
       observer.unobserve(entry.target)
     }
   })

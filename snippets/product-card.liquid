@@ -1,0 +1,68 @@
+{% assign discount_amount  = product.compare_at_price | minus: product.price %}
+{% assign discount_percent = discount_amount | times: 100 | divided_by: product.compare_at_price %}
+
+<div class="product-card fade-in-up">
+  <div class="product-card__image">
+    {% if product.compare_at_price %}
+      <span class="product-card__discount">- {{ discount_percent }}%</span>
+    {% endif %}
+    {{ product.featured_image |  image_url: width: 400 |  image_tag  }}
+    {% render "product-card-atc" product: product %}
+  </div>
+  <div class="product-card__content">
+    <h2 class="product-card__title">{{ product.title }}</h2>
+    <div class="product-card__prices">
+      <span class="product-card__compare-at-price">{{ product.compare_at_price | money }}</span>
+      <span class="product-card__price">{{ product.price |  money }}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .product-card__image{
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .product-card__image:hover .product-card-atc{
+    bottom: 0;
+  }
+
+  .product-card__discount{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 0.4rem 1.2rem;
+    border-radius: 100px;
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  .product-card__image > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .product-card__compare-at-price{
+    color: gray;
+    text-decoration: line-through;
+  }
+</style>
