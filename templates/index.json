@@ -12,8 +12,10 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "bg_color": "#000000",
-        "hero_title": "Skeleton Theme"
+        "image": "shopify://shop_images/teaspoons-full-of-spices.jpg",
+        "overlay_enabled": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 0.6
       }
     },
     "featured_collection_T96d8C": {
