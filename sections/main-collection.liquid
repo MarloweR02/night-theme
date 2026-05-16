@@ -1,3 +1,55 @@
+{% render "collection-filter" collection:collection %}
+<div class="main-collection__filter">
+  <div class="main-collection__filter-wrapper page-width">
+    <div class="main-collection__filter-left">
+      <h3>{{ collection.title }}</h3>
+    </div>
+    <div class="main-collection__filter-right">
+      <div class="main-collection__filter-total"></div>
+      <div class="main-collection__filters filter-open-trigger svg-wrapper">
+        {{ "icon-adjustments.svg" | inline_asset_content }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-collection">
+  <div class="main-collection__wrapper page-width">
+    <div class="main-collection__content">
+      {% paginate collection.products by 12 %}
+        {% for product in collection.products %}
+          {% render 'product-card' product:product %}
+        {% endfor %}
+      {% endpaginate %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .main-collection__filter{
+    border-bottom: 1px solid rgb(193, 193, 193);
+    padding: 0.8rem 0;
+  }
+
+  .main-collection__filter-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+
+  .main-collection{
+    padding: 6rem 0;
+  }
+
+  .main-collection__content{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+  }
+</style>
+
 {% schema %}
 {
   "name": "Collection",
