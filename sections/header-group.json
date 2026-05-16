@@ -40,14 +40,15 @@
       ],
       "name": "Announcement bar",
       "settings": {
-        "bg_color": "#000",
+        "bg_color": "#4a53ff",
         "text_color": "#fff"
       }
     },
     "header": {
       "type": "header",
       "settings": {
-        "bg_color": "#f4f4f4",
+        "bg_color": "#000000",
+        "text_color": "#ffffff",
         "menu": "main-menu"
       }
     }
