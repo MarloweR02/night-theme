@@ -17,19 +17,19 @@
         "announcement_EWbTPg": {
           "type": "announcement",
           "settings": {
-            "announcement": "<strong>Fresh Spices Daily • Premium Quality</strong>"
+            "announcement": "Fresh Spices Daily • Premium Quality"
           }
         },
         "announcement_jpmthD": {
           "type": "announcement",
           "settings": {
-            "announcement": "<strong>Free Shipping on Orders Over $50</strong>"
+            "announcement": "Free Shipping on Orders Over $50"
           }
         },
         "announcement_zfd8ak": {
           "type": "announcement",
           "settings": {
-            "announcement": "<strong>Bold Flavors • Straight From Nature</strong>"
+            "announcement": "Bold Flavors • Straight From Nature"
           }
         }
       },
