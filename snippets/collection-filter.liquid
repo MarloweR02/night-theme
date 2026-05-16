@@ -1,0 +1,45 @@
+<script src={{ "collection-filter.js" |  asset_url }} defer></script>
+
+<collection-filter class="collection-filter">
+  <div class="collection-filter__overlay"></div>
+  <div class="collection-filter__main">
+    <div class="collection-filter__header"></div>
+    <div class="collection-filter__body"></div>
+  </div>
+</collection-filter>
+
+<style>
+  .collection-filter__overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0;
+    z-index: 900;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .collection-filter[open] .collection-filter__overlay{
+    opacity: 0.7;
+    pointer-events: all;
+  }
+
+  .collection-filter__main{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 350px;
+    height: 100vh;
+    background-color: white;
+    z-index: 910;
+    transition: right 0.3s ease;
+  }
+
+  .collection-filter[open] .collection-filter__main{
+    right: 0;
+  } 
+</style>
