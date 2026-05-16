@@ -16,3 +16,20 @@ const observerFadeInUp = new IntersectionObserver((entries, observer)=>{
 fadeInUpEls.forEach((el)=>{
   observerFadeInUp.observe(el)
 })
+
+
+const fadeIn = document.querySelectorAll(".fade-in")
+
+const observerFadeIn = new IntersectionObserver((entries, observer)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('animate')
+      observer.unobserve(entry.target)
+    }
+  })
+})
+
+
+fadeIn.forEach((el)=>{
+  observerFadeIn.observe(el)
+})

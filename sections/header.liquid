@@ -1,4 +1,6 @@
-<div class="header">
+<script src={{ "header.js" |  asset_url}} defer></script>
+
+<header-section class="header">
   <div class="page-width header__inner">
     <div class="header__left">
       <div class="header__logo">
@@ -26,11 +28,15 @@
       </div>
     </div>
   </div>
-</div>
+</header-section>
 
 <style>
   .header{
     padding: 1.2rem 0;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 100;
     background-color: {{ section.settings.bg_color }};
   }
 
