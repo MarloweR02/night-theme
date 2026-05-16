@@ -12,27 +12,27 @@
 
 
 <style>
-  .marquee {
+  #shopify-section-{{ section.id }} .marquee {
     width: 100%;
     overflow: hidden;
     padding: 1rem 0;
     background-color: {{ section.settings.bg_color }};
   }
 
-  .marquee-track {
+  #shopify-section-{{ section.id }} .marquee-track {
     display: flex;
     width: max-content;
     animation: marquee {{ section.settings.duration }}s linear infinite;
   }
 
-  .marquee-group {
+  #shopify-section-{{ section.id }} .marquee-group {
     display: flex;
     white-space: nowrap;
     gap: {{ section.settings.spacing }}px;
     padding-right: {{ section.settings.spacing }}px;
   }
 
-  .marquee-item {
+  #shopify-section-{{ section.id }} .marquee-item {
     font-size: 20px;
     color: {{ section.settings.text_color }};
   }
