@@ -55,7 +55,7 @@
       "settings": {
         "bg_color": "#4a53ff",
         "text_color": "#fff",
-        "spacing": 30,
+        "spacing": 50,
         "duration": 20
       }
     },
