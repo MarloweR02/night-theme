@@ -17,19 +17,19 @@
         "announcement_EWbTPg": {
           "type": "announcement",
           "settings": {
-            "announcement": "Marlowe is the best developer in the world"
+            "announcement": "<strong>Fresh Spices Daily • Premium Quality</strong>"
           }
         },
         "announcement_jpmthD": {
           "type": "announcement",
           "settings": {
-            "announcement": "I'll become a professional developer soon"
+            "announcement": "<strong>Free Shipping on Orders Over $50</strong>"
           }
         },
         "announcement_zfd8ak": {
           "type": "announcement",
           "settings": {
-            "announcement": "Please hire me I really need a job"
+            "announcement": "<strong>Bold Flavors • Straight From Nature</strong>"
           }
         }
       },
