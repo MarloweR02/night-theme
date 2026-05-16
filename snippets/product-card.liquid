@@ -4,7 +4,7 @@
 
 <div class="product-card fade-in-up">
   <div class="product-card__image">
-    {{ product.featured_image | image_url: width: 700 | image_tag }}
+    <a href="{{ product.url }}">{{ product.featured_image | image_url: width: 700 | image_tag }}</a>
     {% if product.compare_at_price != blank %}
       <span class="product-card__image-discount-badge">
         - {{ discount_percent }}%
@@ -49,6 +49,7 @@
     width: 100%;
     height: auto;
     position: relative;
+    overflow: hidden;
   }
 
   .product-card__image-discount-badge{
@@ -62,10 +63,15 @@
     font-size: 1rem;
     line-height: 1;
   }
-  .product-card__image > img {
+  .product-card__image > a > img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+  .product-card__image > a > img:hover{
+    transform: scale(1.05);
   }
 
   .product-card__content-top, .product-card__content-bottom{
