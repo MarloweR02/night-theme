@@ -11,8 +11,19 @@
   "current": {
     "logo": "shopify://shop_images/should-be-rectangle-and-landscape.png",
     "logo_width": 130,
+    "page_width": 1400,
     "heading_font": "acme_n4",
     "body_font": "bayon_n4",
+    "sections": {
+      "predictive-search": {
+        "type": "predictive-search",
+        "settings": {}
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {}
+      }
+    },
     "content_for_index": []
   }
 }
