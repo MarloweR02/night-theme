@@ -1,4 +1,6 @@
-<div class="header">
+<script src={{ "header.js" |  asset_url}} defer></script>
+
+<header-section class="header">
   <div class="page-width header__inner">
     <div class="header__left">
       <div class="header__logo">
@@ -6,7 +8,7 @@
           {% if settings.logo != blank %}
           {{ settings.logo |  image_url: width: settings.logo_width | image_tag  }}
         {% else %}
-          <h2>{{ shop.name }}</h2>
+          <h2 class="header__logo-text">{{ shop.name }}</h2>
         {% endif %}
         </a>
       </div>
@@ -26,12 +28,21 @@
       </div>
     </div>
   </div>
-</div>
+</header-section>
 
 <style>
   .header{
     padding: 1.2rem 0;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 100;
     background-color: {{ section.settings.bg_color }};
+  }
+
+  .header__logo > a{
+    color: inherit;
+    text-decoration: none;
   }
 
   .header__inner{
