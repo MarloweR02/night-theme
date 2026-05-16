@@ -125,12 +125,62 @@
         "title": "Frequently Asked Questions",
         "description": "Find answers to the most common questions about our products, shipping, and returns."
       }
+    },
+    "marquee_jEKftV": {
+      "type": "marquee",
+      "blocks": {
+        "text_pytUL7": {
+          "type": "text",
+          "settings": {
+            "text": "MolecularDev"
+          }
+        },
+        "text_7RVKDG": {
+          "type": "text",
+          "settings": {
+            "text": "MolecularDev"
+          }
+        },
+        "text_iMQJX4": {
+          "type": "text",
+          "settings": {
+            "text": "MolecularDev"
+          }
+        },
+        "text_kJ6qJH": {
+          "type": "text",
+          "settings": {
+            "text": "MolecularDev"
+          }
+        },
+        "text_QjJFyM": {
+          "type": "text",
+          "settings": {
+            "text": "MolecularDev"
+          }
+        }
+      },
+      "block_order": [
+        "text_pytUL7",
+        "text_7RVKDG",
+        "text_iMQJX4",
+        "text_kJ6qJH",
+        "text_QjJFyM"
+      ],
+      "name": "Marquee",
+      "settings": {
+        "bg_color": "#000",
+        "text_color": "#fff",
+        "spacing": 30,
+        "duration": 15
+      }
     }
   },
   "order": [
     "hero",
     "marquee_m4zLjR",
     "featured_collection_T96d8C",
-    "faq_LMGX4K"
+    "faq_LMGX4K",
+    "marquee_jEKftV"
   ]
 }
