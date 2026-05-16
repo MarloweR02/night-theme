@@ -13,8 +13,8 @@
       "type": "hero",
       "settings": {
         "image": "shopify://shop_images/teaspoons-full-of-spices.jpg",
-        "title": "Fresh Groceries, Delivered to Your Door.",
-        "description": "Shop high-quality fruits, vegetables, and everyday essentials—fresh, affordable, and ready when you need them.",
+        "title": "Pure Spices. Bold Flavor. Real Cooking.",
+        "description": "Upgrade your meals with high-quality spices carefully selected for freshness and intensity. Perfect for home cooks and food lovers who care about real taste.",
         "button_text": "Shop Now!",
         "button_link": "",
         "button_text_2": "View Collections",
@@ -27,43 +27,29 @@
     "marquee_m4zLjR": {
       "type": "marquee",
       "blocks": {
-        "text_3eW9gc": {
+        "text_hRaJcr": {
           "type": "text",
           "settings": {
-            "text": "MolecularDev"
+            "text": "🧂 Premium"
           }
         },
-        "text_b3fnbW": {
+        "text_88g4cR": {
           "type": "text",
           "settings": {
-            "text": "MolecularDev"
+            "text": "🌶️ Fresh"
           }
         },
-        "text_AgfKDx": {
+        "text_pPP8Bx": {
           "type": "text",
           "settings": {
-            "text": "MolecularDev"
-          }
-        },
-        "text_nccfVz": {
-          "type": "text",
-          "settings": {
-            "text": "MolecularDev"
-          }
-        },
-        "text_aGK4cw": {
-          "type": "text",
-          "settings": {
-            "text": "MolecularDev"
+            "text": "🌿 Pure"
           }
         }
       },
       "block_order": [
-        "text_3eW9gc",
-        "text_b3fnbW",
-        "text_AgfKDx",
-        "text_nccfVz",
-        "text_aGK4cw"
+        "text_hRaJcr",
+        "text_88g4cR",
+        "text_pPP8Bx"
       ],
       "name": "Marquee",
       "settings": {
