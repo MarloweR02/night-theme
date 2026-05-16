@@ -27,26 +27,33 @@
     "marquee_m4zLjR": {
       "type": "marquee",
       "blocks": {
+        "text_yNJpf7": {
+          "type": "text",
+          "settings": {
+            "text": "🧂 Kitchen Essential Goods"
+          }
+        },
         "text_hRaJcr": {
           "type": "text",
           "settings": {
-            "text": "🧂 Premium"
+            "text": "🍛 Cook With Love"
           }
         },
         "text_88g4cR": {
           "type": "text",
           "settings": {
-            "text": "🌶️ Fresh"
+            "text": "🌿 Fresh Natural Spices"
           }
         },
         "text_pPP8Bx": {
           "type": "text",
           "settings": {
-            "text": "🌿 Pure"
+            "text": "🔥 Heat That Hits"
           }
         }
       },
       "block_order": [
+        "text_yNJpf7",
         "text_hRaJcr",
         "text_88g4cR",
         "text_pPP8Bx"
