@@ -1,0 +1,48 @@
+{% assign first_collection = product.collections.first %}
+
+<div class="breadcrumb">
+  <div class="breadcrumb__wrapper page-width">
+    <div class="svg-wrapper">
+      {{ "icon-house.svg" | inline_asset_content }}
+    </div>
+    <a class="breadcrumb__path" href="{{ routes.root_url }}">Home</a>
+    
+    {% if first_collection %}
+      <span class="breadcrumb__sep">/</span>
+      <a class="breadcrumb__path" href="{{ first_collection.url }}">{{ first_collection.title }}</a>
+    {% endif %}
+    
+    {% if product %}
+      <span class="breadcrumb__sep">/</span>
+      <p class="breadcrumb__path"> {{ product.title }}</p>
+    {% endif %}
+
+  </div>
+</div>
+
+<style>
+  .breadcrumb{
+    padding: 0.8rem 0;
+  }
+
+  .breadcrumb__path{
+    color: inherit;
+  }
+
+  .breadcrumb__wrapper{
+    display: flex;
+    gap: 1rem;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "breadcrumb",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Breadcrumb"
+    }
+  ]
+}
+{% endschema %}
