@@ -3,35 +3,30 @@
     <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
     <input type="hidden" name="quantity" value="0">
     <button class="product-card-atc__button">
-      Add to cart 
+      <div class="svg-wrapper">
+        {{ "icon-shopping-bag.svg" | inline_asset_content }}
+      </div>Add to cart 
     </button>
   {% endform %}
 </product-card-atc>
 
 <style>
-  .product-card-atc{
-    position: absolute;
-    left: 0;
-    bottom: -100%;
-    width: 100%;
-    padding: 1rem;
-    transition: all 0.3s ease;
-  }
-
   .product-card-atc__button{
-    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     color: white;
-    border: 1px solid white;
-    width: 100%;
-    padding: 0.8rem 0;
-    width: 100%;
-    border-radius: 100px;
-    cursor: pointer;
+    background-color: #4a53ff;
+    border: 1px solid transparent;
     transition: all 0.3s ease;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
     font-weight: bold;
   }
   .product-card-atc__button:hover{
-    background-color: white;
-    color: black;
+    background-color: transparent;
+    color: #4a53ff;
+    border: 1px solid #4a53ff;
   }
 </style>

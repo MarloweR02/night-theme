@@ -1,67 +1,109 @@
 {% assign discount_amount  = product.compare_at_price | minus: product.price %}
 {% assign discount_percent = discount_amount | times: 100 | divided_by: product.compare_at_price %}
 
+
 <div class="product-card fade-in-up">
   <div class="product-card__image">
-    {% if product.compare_at_price %}
-      <span class="product-card__discount">- {{ discount_percent }}%</span>
+    {{ product.featured_image | image_url: width: 700 | image_tag }}
+    {% if product.compare_at_price != blank %}
+      <span class="product-card__image-discount-badge">
+        - {{ discount_percent }}%
+      </span>
     {% endif %}
-    {{ product.featured_image |  image_url: width: 400 |  image_tag  }}
-    {% render "product-card-atc" product: product %}
   </div>
   <div class="product-card__content">
-    <h2 class="product-card__title">{{ product.title }}</h2>
-    <div class="product-card__prices">
-      <span class="product-card__compare-at-price">{{ product.compare_at_price | money }}</span>
-      <span class="product-card__price">{{ product.price |  money }}</span>
+    <div class="product-card__content-top">
+      <h3 class="product-card__content-top-title">{{ product.title }}</h3>
+      {% if product.metafields.custom.tasting_notes != blank %}
+        <div class="product-card__tasting-notes">
+        <p class="product-card__tasting-notes-text">Tasting notes:</p>
+        <div class="product-card__tasting-notes-tags">
+          {% for item in product.metafields.custom.tasting_notes.value %}
+            <span class="product-card__tasting-notes-tag">{{ item }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="product-card__content-bottom">
+      <div class="product-card__content-bottom-prices">
+        <span class="product-card__content-bottom-price">{{ product.price | money }}</span>
+        <span class="product-card__content-bottom-compare-at-price">{{ product.compare_at_price | money }}</span>
+      </div>
+      {% render "product-card-atc", product: product %}
     </div>
   </div>
 </div>
 
 <style>
 
-  .product-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+  .product-card{
+    background-color: white;
+    border: 1px solid rgb(133, 133, 133);
+    /* border-radius: 1.2rem; */
+    overflow: hidden;
   }
-
   .product-card__image{
     width: 100%;
     height: auto;
-    background-color: rgb(255, 255, 255);
     position: relative;
-    overflow: hidden;
-    cursor: pointer;
   }
 
-  .product-card__image:hover .product-card-atc{
-    bottom: 0;
-  }
-
-  .product-card__discount{
+  .product-card__image-discount-badge{
     position: absolute;
     top: 12px;
     left: 12px;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
+    background-color: #4a53ff;
     color: white;
-    padding: 0.4rem 1.2rem;
     border-radius: 100px;
-    font-size: 10px;
-    line-height: 1.2;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1;
   }
-  .product-card__image > img{
+  .product-card__image > img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
 
-  .product-card__compare-at-price{
-    color: gray;
-    text-decoration: line-through;
+  .product-card__content-top, .product-card__content-bottom{
+    padding: 1.2rem;
   }
+
+  .product-card__content-top{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .product-card__content-bottom{
+    border-top: 1px solid rgb(135, 135, 135);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .product-card__content-bottom-compare-at-price{
+    text-decoration: line-through;
+    color: rgb(95, 95, 95);
+  }
+
+  .product-card__content-bottom-price{
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+
+  .product-card__tasting-notes-tag{
+    background-color: #4a53ff;
+    color: white;
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .product-card__tasting-notes-text{
+    font-size: 1.4rem;
+    color: gray;
+  }
+  
 </style>
