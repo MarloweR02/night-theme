@@ -13,9 +13,64 @@
       "type": "hero",
       "settings": {
         "image": "shopify://shop_images/teaspoons-full-of-spices.jpg",
+        "title": "Fresh Groceries, Delivered to Your Door.",
+        "description": "Shop high-quality fruits, vegetables, and everyday essentials—fresh, affordable, and ready when you need them.",
+        "button_text": "Shop Now!",
+        "button_link": "",
+        "button_text_2": "View Collections",
+        "button_link_2": "",
         "overlay_enabled": true,
         "overlay_color": "#000000",
         "overlay_opacity": 0.6
+      }
+    },
+    "marquee_m4zLjR": {
+      "type": "marquee",
+      "blocks": {
+        "text_3eW9gc": {
+          "type": "text",
+          "settings": {
+            "text": "MolecularDev"
+          }
+        },
+        "text_b3fnbW": {
+          "type": "text",
+          "settings": {
+            "text": "MolecularDev"
+          }
+        },
+        "text_AgfKDx": {
+          "type": "text",
+          "settings": {
+            "text": "MolecularDev"
+          }
+        },
+        "text_nccfVz": {
+          "type": "text",
+          "settings": {
+            "text": "MolecularDev"
+          }
+        },
+        "text_aGK4cw": {
+          "type": "text",
+          "settings": {
+            "text": "MolecularDev"
+          }
+        }
+      },
+      "block_order": [
+        "text_3eW9gc",
+        "text_b3fnbW",
+        "text_AgfKDx",
+        "text_nccfVz",
+        "text_aGK4cw"
+      ],
+      "name": "Marquee",
+      "settings": {
+        "bg_color": "#4a53ff",
+        "text_color": "#fff",
+        "spacing": 30,
+        "duration": 15
       }
     },
     "featured_collection_T96d8C": {
@@ -70,61 +125,12 @@
         "title": "Frequently Asked Questions",
         "description": "Find answers to the most common questions about our products, shipping, and returns."
       }
-    },
-    "marquee_m4zLjR": {
-      "type": "marquee",
-      "blocks": {
-        "text_3eW9gc": {
-          "type": "text",
-          "settings": {
-            "text": "MolecularDev"
-          }
-        },
-        "text_b3fnbW": {
-          "type": "text",
-          "settings": {
-            "text": "MolecularDev"
-          }
-        },
-        "text_AgfKDx": {
-          "type": "text",
-          "settings": {
-            "text": "MolecularDev"
-          }
-        },
-        "text_nccfVz": {
-          "type": "text",
-          "settings": {
-            "text": "MolecularDev"
-          }
-        },
-        "text_aGK4cw": {
-          "type": "text",
-          "settings": {
-            "text": "MolecularDev"
-          }
-        }
-      },
-      "block_order": [
-        "text_3eW9gc",
-        "text_b3fnbW",
-        "text_AgfKDx",
-        "text_nccfVz",
-        "text_aGK4cw"
-      ],
-      "name": "Marquee",
-      "settings": {
-        "bg_color": "#000",
-        "text_color": "#fff",
-        "spacing": 30,
-        "duration": 15
-      }
     }
   },
   "order": [
     "hero",
+    "marquee_m4zLjR",
     "featured_collection_T96d8C",
-    "faq_LMGX4K",
-    "marquee_m4zLjR"
+    "faq_LMGX4K"
   ]
 }
