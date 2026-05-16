@@ -1,6 +1,18 @@
 <div class="hero">
   {{ section.settings.image | image_url: width: 1500 | image_tag }}
   <div class="hero__overlay"></div>
+  <div class="hero__wrapper page-width">
+    <h1 class="hero__title fade-in-up">{{ section.settings.title }}</h1>
+    <p class="hero__description fade-in-up">{{ section.settings.description }}</p>
+    <div class="hero__buttons fade-in-up">
+      {% if section.settings.button_text != blank %}
+        <a class="hero__button hero__button-primary" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+      {% endif %}
+      {% if section.settings.button_text_2 != blank %}
+        <a class="hero__button hero__button-secondary" href="{{ section.settings.button_link_2 }}">{{ section.settings.button_text_2 }}</a>
+      {% endif %}
+    </div>
+  </div>
 </div>
 
 <style>
@@ -15,6 +27,29 @@
     object-fit: cover;
   }
 
+  .hero__wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .hero__title{
+    color: white;
+    font-size: 74px;
+    line-height: 1.1;
+    max-width: 110rem;
+  }
+
+  .hero__description{
+    color: whitesmoke;
+    max-width: 70rem;
+  }
+
   .hero__overlay{
     position: absolute;
     top: 0;
@@ -23,6 +58,42 @@
     height: 100%;
     background-color: {{ section.settings.overlay_color }};
     opacity: {{ section.settings.overlay_opacity }};
+  }
+
+  .hero__buttons{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .hero__button{
+    border: 1px solid rgb(255, 255, 255);
+    color: inherit;
+    padding: 1.2rem 2.4rem;
+    text-decoration: none;
+    min-width: 16rem;
+    text-align: center;
+  }
+
+  .hero__button-primary{
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease;
+  }
+  .hero__button-primary:hover{
+    background-color: transparent;
+    color: white;
+  }
+
+  .hero__button-secondary{
+    background-color: transparent;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  .hero__button-secondary:hover{
+    background-color: white;
+    color: black;
   }
 </style>
 
@@ -36,6 +107,44 @@
       "label": "Image"
     },
     {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Fresh Groceries, Delivered to Your Door."
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Shop high-quality fruits, vegetables, and everyday essentials—fresh, affordable, and ready when you need them."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now!"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "button_text_2",
+      "label": "Button text 2",
+      "default": "View Collections"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button link 2"
+    },
+    { 
       "type": "header",
       "content": "Overlay"
     },
