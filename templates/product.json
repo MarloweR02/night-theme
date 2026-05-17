@@ -9,12 +9,57 @@
  */
 {
   "sections": {
+    "breadcrumb_fAnN4k": {
+      "type": "breadcrumb",
+      "name": "Breadcrumb",
+      "settings": {}
+    },
     "main": {
       "type": "main-product",
+      "blocks": {
+        "title_j7aeWw": {
+          "type": "title",
+          "settings": {}
+        },
+        "description_czenxb": {
+          "type": "description",
+          "settings": {}
+        },
+        "price_aX8N48": {
+          "type": "price",
+          "settings": {}
+        },
+        "stock_VWAeDa": {
+          "type": "stock",
+          "settings": {}
+        },
+        "variant_fQYVLE": {
+          "type": "variant",
+          "settings": {}
+        },
+        "add_to_cart_iYrdUq": {
+          "type": "add_to_cart",
+          "settings": {}
+        },
+        "faq_TExXMc": {
+          "type": "faq",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_j7aeWw",
+        "description_czenxb",
+        "price_aX8N48",
+        "stock_VWAeDa",
+        "variant_fQYVLE",
+        "add_to_cart_iYrdUq",
+        "faq_TExXMc"
+      ],
       "settings": {}
     }
   },
   "order": [
+    "breadcrumb_fAnN4k",
     "main"
   ]
 }
