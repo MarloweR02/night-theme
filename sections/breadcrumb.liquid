@@ -2,7 +2,7 @@
 
 <div class="breadcrumb">
   <div class="breadcrumb__wrapper page-width">
-    <div class="svg-wrapper">
+    <div class="svg-wrapper home-path">
       {{ "icon-house.svg" | inline_asset_content }}
     </div>
     <a class="breadcrumb__path" href="{{ routes.root_url }}">Home</a>
@@ -23,15 +23,23 @@
 <style>
   .breadcrumb{
     padding: 0.8rem 0;
+    border-bottom: 1px solid rgb(189, 189, 189);
+  }
+
+  .home-path{
+    width: 20px;
+    height: 20px;
   }
 
   .breadcrumb__path{
     color: inherit;
+    font-size: 12px;
   }
 
   .breadcrumb__wrapper{
     display: flex;
     gap: 1rem;
+    align-items: center;
   }
 </style>
 
