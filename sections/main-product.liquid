@@ -1,11 +1,48 @@
 <div class="main-product">
   <div class="main-product__wrapper page-width">
     <div class="main-product__media">
-      {% comment %} render product gallery {% endcomment %}
+      {% render "product-gallery" product:product %}
     </div>
-    <div class="main-product__content"></div>
+    <div class="main-product__content">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'title' %}
+            <h1>{{ product.title }}</h1>
+          {% when 'description' %}
+            description
+          {% when 'price' %}
+            price
+          {% when 'variant' %}
+            variant
+          {% when 'add_to_cart' %}
+            add to cart
+          {% when 'faq' %}
+            faq
+          {% when 'stock' %}
+            stock
+          {% when 'divider' %}
+            divider
+        {% endcase %}
+      {% endfor %}
+    </div>
   </div>
 </div>
+
+<style>
+  .main-product__wrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 4rem;
+  }
+
+  .main-product__content{
+  }
+
+  .main-product{
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+  }
+</style>
 
 {% schema %}
 {
@@ -21,6 +58,11 @@
     {
       "type": "description",
       "name":"Description",
+      "settings": []
+    },
+    {
+      "type": "divider",
+      "name":"Divider",
       "settings": []
     },
     {
@@ -44,6 +86,12 @@
     {
       "type": "faq",
       "name":"Faq",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "stock",
+      "name":"Stock",
       "limit": 1,
       "settings": []
     }
