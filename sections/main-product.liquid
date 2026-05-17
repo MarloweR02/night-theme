@@ -1,8 +1,52 @@
-
+<div class="main-product">
+  <div class="main-product__wrapper page-width">
+    <div class="main-product__media">
+      {% comment %} render product gallery {% endcomment %}
+    </div>
+    <div class="main-product__content"></div>
+  </div>
+</div>
 
 {% schema %}
 {
   "name": "Product",
-  "settings": []
+  "settings": [],
+  "blocks": [
+    {
+      "type": "title",
+      "name":"Title",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "description",
+      "name":"Description",
+      "settings": []
+    },
+    {
+      "type": "price",
+      "name":"Price",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "variant",
+      "name":"Variant",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "add_to_cart",
+      "name":"Add to cart",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "faq",
+      "name":"Faq",
+      "limit": 1,
+      "settings": []
+    }
+  ]
 }
 {% endschema %}
