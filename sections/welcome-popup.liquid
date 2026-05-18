@@ -1,5 +1,9 @@
 <script src={{ "welcome-popup.js"  | asset_url }} defer></script>
-<welcome-popup class="welcome-popup">
+<welcome-popup class="welcome-popup"
+  {% if section.settings.add_show %}
+    show
+  {% endif %}
+  >
   <div class="welcome-popup__overlay"></div>
   <div class="welcome-popup__main">
     <button class="popup-close-trigger close-popup-button">
@@ -81,6 +85,12 @@
 {
   "name": "Welcome popup",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "add_show",
+      "label": "Show popup",
+      "info": "Only enable it when editing"
+    },
     {
       "type": "text",
       "id": "title",
