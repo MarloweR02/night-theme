@@ -22,7 +22,9 @@
             <div class="fade-in-up main-product__prices" {{ block.shopify_attributes }}>
               <span class="main-product__price">{{ product.price | money }}</span>
               <span class="main-product__compare-at-price">{{ product.compare_at_price | money }}</span>
-              <span class="main_product__discount">- {{ discount_percent }}%</span>
+              {% if  product.compare_at_price %}
+                <span class="main_product__discount">- {{ discount_percent }}%</span>
+              {% endif %}
             </div>
 
           {% when 'variant' %}
