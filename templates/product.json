@@ -23,7 +23,9 @@
         },
         "description_czenxb": {
           "type": "description",
-          "settings": {}
+          "settings": {
+            "description": "<p>{{ product.metafields.custom.short_description | metafield_tag }}</p>"
+          }
         },
         "price_aX8N48": {
           "type": "price",
