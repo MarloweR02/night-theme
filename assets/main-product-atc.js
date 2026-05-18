@@ -37,7 +37,12 @@ class MainProductAtc extends HTMLElement{
        return response.json();
      })
      .then((data)=>{
-      console.log(data)
+      document.documentElement.dispatchEvent(
+        new CustomEvent("cart:rerender",{
+          detail:data,
+          bubbles:true
+        })
+      )
      })
      .catch((error) => {
        console.error('Error:', error);
