@@ -5,7 +5,8 @@
   {% endif %}
   >
   <div class="welcome-popup__overlay"></div>
-  <div class="welcome-popup__main">
+  <div class="welcome-popup__main" 
+  {{ section.shopify_attributes }}>
     <button class="popup-close-trigger close-popup-button">
       <div class="svg-wrapper">
         {{ "icon-x-mark.svg" | inline_asset_content }}
@@ -31,54 +32,60 @@
     pointer-events: none;
   }
 
-.welcome-popup__title{
-  padding-bottom: 2rem;
-  text-align: center;
-}
+  .welcome-popup__title{
+    padding-bottom: 2rem;
+    text-align: center;
+  }
 
-.welcome-popup__description{
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
+  .welcome-popup__description{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
 
-.welcome-popup[show] .welcome-popup__overlay {
-  opacity: 1;
-}
+  .welcome-popup[show] .welcome-popup__overlay {
+    opacity: 1;
+    pointer-events: all;
+  }
 
-.welcome-popup__main{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-height: 500px;
-  width: 500px;
-  background-color: white;
-  z-index: 220;
-  padding: 2rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+  .welcome-popup__main{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 500px;
+    width: 500px;
+    background-color: white;
+    z-index: 220;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
-.welcome-popup[show] .welcome-popup__main{
-  opacity: 1;
-}
+  .welcome-popup[show] .welcome-popup__main{
+    opacity: 1;
+  }
 
-.close-popup-button{
-  background-color: black;
-  border: none;
-  position: absolute;
-  top: -16px;
-  right: -16px;
-  padding: 0.8rem;
-  border-radius: 50px;
-}
-.close-popup-button:hover > div > svg{
-  transform: rotate(180deg);
-}
-.close-popup-button > div > svg{
-  color: white;
-}
+  .welcome-popup__description ul,
+  .welcome-popup__description ol{
+    padding-left: 2rem;
+  }
+
+  .close-popup-button{
+    background-color: black;
+    border: none;
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    padding: 0.8rem;
+    border-radius: 50px;
+  }
+  .close-popup-button:hover > div > svg{
+    transform: rotate(180deg);
+  }
+  .close-popup-button > div > svg{
+    color: white;
+  }
 </style>
 
 {% schema %}
