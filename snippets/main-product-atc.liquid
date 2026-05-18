@@ -1,24 +1,24 @@
+<script src={{ "main-product-atc.js" | asset_url }} defer></script>
+
 <main-product-atc class="main-product-atc fade-in-up">
   {% form 'product', product %}
     <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-    <input type="hidden" name="quantity" value="0">
+    <input type="hidden" name="quantity" value="1">
     
     <div class="quantity-selector">
-      <div class="quantity-selector__decrease quantity-selector__action">
+      <div class="quantity-selector__decrease quantity-selector__action" decrease>
         <div class="svg-wrapper ">
           {{ "icon-minus.svg" | inline_asset_content }}
         </div>
       </div>
-      <div class="quantity-selector__quantity quantity-selector__action">
-        1
-      </div>
-      <div class="quantity-selector__increase quantity-selector__action">
+      <input class="quantity-selector__quantity quantity-selector__action" quantity value="1" min="1" max="{{ product.selected_or_first_available_variant.inventory_quantity }}">
+      <div class="quantity-selector__increase quantity-selector__action" increase>
         <div class="svg-wrapper">
           {{ "icon-plus.svg" | inline_asset_content }}
         </div>
       </div>
     </div>
-    <button class="main-product-atc__button">
+    <button class="main-product-atc__button" main-atc>
       <div class="svg-wrapper main-product-atc__button-icon">
         {{ "icon-shopping-bag.svg" | inline_asset_content }}
       </div>
@@ -29,7 +29,7 @@
 
 <style>
   :root{
-    --main-atc-size: 4.4rem
+    --main-atc-size: 4.2rem
   }
 
   .main-product-atc{
