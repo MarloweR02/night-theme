@@ -1,6 +1,25 @@
 <product-gallery class="product-gallery">
   <div class="product-gallery__storage">dsa</div>
-  <div class="product-gallery__main">{{ product.featured_image |  image_url: width: 1000 | image_tag }}</div>
+
+  <div class="product-gallery__main">
+    <div class="product-gallery__navigation ">
+      <button class="product-gallery__navigation-left product-gallery__navigation-button" nav-left>
+        <div class="svg-wrapper">
+          {{ "icon-chevron-left.svg" | inline_asset_content }}
+        </div>
+      </button>
+      <button class="product-gallery__navigation-right product-gallery__navigation-button" nav-right>
+        <div class="svg-wrapper">
+          {{ "icon-chevron-right.svg" | inline_asset_content }}
+        </div>
+      </button>
+    </div>
+    <div class="product-gallery__carousel">
+      {% for product_image in product.images %}
+        {{ product_image |  image_url: width: 500 |  image_tag: class: "product-gallery__image" }}
+      {% endfor %}
+    </div>
+  </div>
 </product-gallery>
 
 <style>
@@ -9,15 +28,56 @@
     display: flex;
     gap: 1rem;
   }
+
   .product-gallery__main{
-    width: 100%;
-    height: auto;
-  }
-  .product-gallery__main > img{
+    position: relative;
+    overflow: hidden;
     width: 100%;
     height: 100%;
-    object-fit: cover;
   }
+
+  .product-gallery__navigation-button{
+    padding: 0.8rem;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 100px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease;
+  }
+
+  .product-gallery__navigation-button:hover{
+    transform: translateY(-4px);
+  }
+
+  .product-gallery__navigation-button> div > svg{
+    color: white;
+  }
+
+  .product-gallery__navigation{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+    z-index: 2;
+  }
+
+  .product-gallery__carousel{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.65s ease;
+  }
+  .product-gallery__carousel > img{
+    height: 100%;
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
 
   .product-gallery__storage{
     width: 150px;
