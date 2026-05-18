@@ -1,5 +1,9 @@
 <product-gallery class="product-gallery">
-  <div class="product-gallery__storage">dsa</div>
+  <div class="product-gallery__storage">
+    {% for product_image in product.images %}
+      {{ product_image |  image_url: width: 300 |  image_tag: class: "product-gallery__storage-image " }}
+    {% endfor %}
+  </div>
 
   <div class="product-gallery__main">
     <div class="product-gallery__navigation ">
@@ -27,6 +31,15 @@
   .product-gallery{
     display: flex;
     gap: 1rem;
+  }
+
+  .product-gallery__storage-image{
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  .product-gallery__storage-image.active{
+    border-color: black ;
   }
 
   .product-gallery__main{
@@ -81,6 +94,10 @@
 
   .product-gallery__storage{
     width: 150px;
-    background-color: red;
+    padding: 1rem 0;
+  }
+  .product-gallery__storage > img{
+    width: 100%;
+    height: auto;
   }
 </style>

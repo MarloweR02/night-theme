@@ -7,12 +7,17 @@ class ProductGallery extends HTMLElement{
     this.featuredImage = this.querySelectorAll('.product-gallery__image')
     this.featureCarousel = this.querySelector('.product-gallery__carousel')
 
+    this.galleryImages = this.querySelectorAll(".product-gallery__storage-image")
+
     this.currentIndex = 0
   }
 
   connectedCallback(){
     this.navLeft.addEventListener('click', this.slideLeft.bind(this))
     this.navRight.addEventListener('click', this.slideRight.bind(this))
+    this.galleryImages.forEach((image)=>{
+      image.addEventListener('click', this.galleryUpdate.bind(this))
+    })
   }
 
   slideLeft(){
@@ -38,6 +43,10 @@ class ProductGallery extends HTMLElement{
   updateFeaturedImage(){
     const offset = this.currentIndex * 100
     this.featureCarousel.style.transform = `translateX(-${offset}%)`
+  }
+
+  galleryUpdate(){
+    
   }
 
   disconnectedCallback(){}
