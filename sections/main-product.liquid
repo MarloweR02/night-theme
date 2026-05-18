@@ -5,25 +5,37 @@
     <div class="main-product__media">
       {% render "product-gallery" product:product %}
     </div>
+
     <div class="main-product__content">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'title' %}
             <h1>{{ product.title }}</h1>
+
           {% when 'description' %}
-            description
+            <div class="main-product__description"></div>
+            
           {% when 'price' %}
-            price
+            <div class="main-product__prices">
+              <span class="main-product__price">{{ product.price | money }}</span>
+              <span class="main-product__compare-at-price">{{ product.compare_at_price | money }}</span>
+            </div>
+
           {% when 'variant' %}
-            variant
+            {% comment %} render snippet {% endcomment %}
+
           {% when 'add_to_cart' %}
-            add to cart
+            {% comment %} render snippet {% endcomment %}
+
           {% when 'faq' %}
-            faq
+            {% comment %} render snippet {% endcomment %}
+
           {% when 'stock' %}
             stock
+
           {% when 'divider' %}
             divider
+
         {% endcase %}
       {% endfor %}
     </div>
@@ -39,6 +51,9 @@
 
   .main-product__content{
     padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
   .main-product{
