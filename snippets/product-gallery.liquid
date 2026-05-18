@@ -9,7 +9,8 @@
   </div>
 
   <div class="product-gallery__main">
-    <div class="product-gallery__navigation ">
+    {% if product.images.size > 1 %}
+      <div class="product-gallery__navigation ">
       <button class="product-gallery__navigation-left product-gallery__navigation-button" nav-left>
         <div class="svg-wrapper">
           {{ "icon-chevron-left.svg" | inline_asset_content }}
@@ -21,6 +22,7 @@
         </div>
       </button>
     </div>
+    {% endif %}
     <div class="product-gallery__carousel">
       {% for product_image in product.images %}
         {{ product_image |  image_url: width: 500 |  image_tag: class: "product-gallery__image" }}
