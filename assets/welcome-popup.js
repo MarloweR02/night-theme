@@ -7,14 +7,20 @@ class WelcomePopup extends HTMLElement{
   }
 
   connectedCallback(){
-    document.addEventListener("DOMContentLoaded", this.showPopup.bind(this))
+    this.showPopup()
     this.closeTrigger.addEventListener("click", this.closePopup.bind(this))
   }
 
   showPopup(){
+    const isShown = sessionStorage.getItem('WelcomePopup')
+
+    if(isShown) return
+
     setTimeout(() => {
       this.setAttribute("show", "")
       this.body.classList.add('no-scroll')
+
+      sessionStorage.setItem("WelcomePopup", "true")
     }, 2000);
   }
 
