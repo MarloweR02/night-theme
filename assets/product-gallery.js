@@ -12,6 +12,7 @@ class ProductGallery extends HTMLElement{
     this.currentIndex = 0
   }
 
+
   connectedCallback(){
     this.navLeft.addEventListener('click', this.slideLeft.bind(this))
     this.navRight.addEventListener('click', this.slideRight.bind(this))
@@ -19,6 +20,7 @@ class ProductGallery extends HTMLElement{
       image.addEventListener('click', this.galleryUpdate.bind(this))
     })
   }
+
 
   slideLeft(){
     this.currentIndex--
@@ -28,8 +30,9 @@ class ProductGallery extends HTMLElement{
     }
 
     this.updateFeaturedImage()
-
   }
+
+
   slideRight(){
     this.currentIndex++
 
@@ -40,14 +43,28 @@ class ProductGallery extends HTMLElement{
     this.updateFeaturedImage()
   }
 
+
   updateFeaturedImage(){
     const offset = this.currentIndex * 100
     this.featureCarousel.style.transform = `translateX(-${offset}%)`
   }
 
-  galleryUpdate(){
-    
+
+  galleryUpdate(e){
+    this.clickedImage = e.currentTarget
+
+    const index = Array.from(this.galleryImages).indexOf(this.clickedImage)
+
+    this.galleryImages.forEach((img)=>{
+      img.classList.remove('active')
+    })
+
+    this.clickedImage.classList.add('active')
+
+    this.currentIndex = index
+    this.updateFeaturedImage()
   }
+  
 
   disconnectedCallback(){}
 }
