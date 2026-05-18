@@ -7,7 +7,17 @@
         {{ "icon-x-mark.svg" | inline_asset_content }}
       </div>
     </div>
-    <div class="cart-drawer__main-body"></div>
+    <div class="cart-drawer__main-body">
+      {% for item in cart.items %}
+        <div class="cart-drawer__item">
+          <div class="cart-drawer__item-image">
+            {{ item.image |  image_url: width: 300 |  image_tag  }}
+          </div>
+          <div class="cart-drawer__item-content"></div>
+          <div class="cart-drawer__item-actions"></div>
+        </div>
+      {% endfor %}
+    </div>
     <div class="cart-drawer__main-footer"></div>
   </div>
 </cart-drawer>

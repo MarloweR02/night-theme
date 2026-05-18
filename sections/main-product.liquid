@@ -37,7 +37,7 @@
             {% comment %} render snippet {% endcomment %}
 
           {% when 'stock' %}
-
+            <span>{{ product.selected_or_first_available_variant.inventory_quantity }}</span>
           {% when 'divider' %}
 
         {% endcase %}

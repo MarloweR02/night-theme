@@ -1,7 +1,7 @@
 <product-card-atc class="product-card-atc">
   {% form 'product', product %}
     <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-    <input type="hidden" name="quantity" value="0">
+    <input type="hidden" name="quantity" value="1">
     <button class="product-card-atc__button">
       <div class="svg-wrapper">
         {{ "icon-shopping-bag.svg" | inline_asset_content }}
