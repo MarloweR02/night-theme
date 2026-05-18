@@ -5,7 +5,7 @@
 
 <div class="main-product">
   <div class="main-product__wrapper page-width">
-    <div class="main-product__media">
+    <div class="main-product__media ">
       {% render "product-gallery" product:product %}
     </div>
 
@@ -13,13 +13,13 @@
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'title' %}
-            <h1 {{ block.shopify_attributes }}>{{ product.title }}</h1>
+            <h1 class="fade-in-up" {{ block.shopify_attributes }} >{{ product.title }}</h1>
 
           {% when 'description' %}
-            <div class="main-product__description" {{ block.shopify_attributes }}>{{ block.settings.description }}</div>
+            <div class="fade-in-up main-product__description" {{ block.shopify_attributes }}>{{ block.settings.description }}</div>
             
           {% when 'price' %}
-            <div class="main-product__prices" {{ block.shopify_attributes }}>
+            <div class="fade-in-up main-product__prices" {{ block.shopify_attributes }}>
               <span class="main-product__price">{{ product.price | money }}</span>
               <span class="main-product__compare-at-price">{{ product.compare_at_price | money }}</span>
               <span class="main_product__discount">- {{ discount_percent }}%</span>
@@ -35,10 +35,8 @@
             {% comment %} render snippet {% endcomment %}
 
           {% when 'stock' %}
-            stock
 
           {% when 'divider' %}
-            divider
 
         {% endcase %}
       {% endfor %}
@@ -57,7 +55,7 @@
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 2rem;
   }
 
   .main-product{
