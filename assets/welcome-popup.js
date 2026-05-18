@@ -21,7 +21,7 @@ class WelcomePopup extends HTMLElement{
       this.body.classList.add('no-scroll')
 
       sessionStorage.setItem("WelcomePopup", "true")
-    }, 2000);
+    }, 1500);
   }
 
   closePopup(){

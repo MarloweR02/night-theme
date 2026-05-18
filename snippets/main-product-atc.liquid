@@ -1,0 +1,74 @@
+<main-product-atc class="main-product-atc fade-in-up">
+  {% form 'product', product %}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+    <input type="hidden" name="quantity" value="0">
+    
+    <div class="quantity-selector">
+      <div class="quantity-selector__decrease quantity-selector__action">
+        <div class="svg-wrapper ">
+          {{ "icon-minus.svg" | inline_asset_content }}
+        </div>
+      </div>
+      <div class="quantity-selector__quantity quantity-selector__action">
+        1
+      </div>
+      <div class="quantity-selector__increase quantity-selector__action">
+        <div class="svg-wrapper">
+          {{ "icon-plus.svg" | inline_asset_content }}
+        </div>
+      </div>
+    </div>
+    <button class="main-product-atc__button">
+      <div class="svg-wrapper main-product-atc__button-icon">
+        {{ "icon-shopping-bag.svg" | inline_asset_content }}
+      </div>
+      ADD TO CART
+    </button>
+  {% endform %}
+</main-product-atc>
+
+<style>
+  :root{
+    --main-atc-size: 4.4rem
+  }
+
+  .main-product-atc{
+    width: 100%;
+  }
+  .main-product-atc > form{
+    width: 100%;
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .quantity-selector{
+    display: flex;
+  }
+
+  .quantity-selector__action{
+    border: 1px solid rgb(194, 194, 194);
+    height: var(--main-atc-size) ;
+    width: var(--main-atc-size) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-product-atc__button{
+    width: 100%;
+    background-color: var(--primary-color);
+    height: var(--main-atc-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .main-product-atc__button-icon > svg{
+    color: white;
+  }
+</style>
