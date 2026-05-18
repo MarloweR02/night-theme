@@ -22,10 +22,9 @@ class MainProductAtc extends HTMLElement{
       'items': [{
        'id': this.form.querySelector("input[name='id']").value,
        'quantity': this.form.querySelector("input[name='quantity']").value
-       }]
+       }],
+       "sections":"cart-drawer,cart-count"
      };
-
-    //  console.log(formData)
      
      fetch(window.Shopify.routes.root + 'cart/add.js', {
        method: 'POST',
