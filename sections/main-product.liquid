@@ -1,5 +1,8 @@
 <script src={{ "product-gallery.js" | asset_url }} defer></script>
 
+{% assign remained_price = product.compare_at_price | minus: product.price %}
+{% assign discount_percent = remained_price | times: 100 |  divided_by: product.compare_at_price  %}
+
 <div class="main-product">
   <div class="main-product__wrapper page-width">
     <div class="main-product__media">
@@ -10,15 +13,16 @@
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'title' %}
-            <h1>{{ product.title }}</h1>
+            <h1 {{ block.shopify_attributes }}>{{ product.title }}</h1>
 
           {% when 'description' %}
-            <div class="main-product__description"></div>
+            <div class="main-product__description" {{ block.shopify_attributes }}>{{ block.settings.description }}</div>
             
           {% when 'price' %}
-            <div class="main-product__prices">
+            <div class="main-product__prices" {{ block.shopify_attributes }}>
               <span class="main-product__price">{{ product.price | money }}</span>
               <span class="main-product__compare-at-price">{{ product.compare_at_price | money }}</span>
+              <span class="main_product__discount">- {{ discount_percent }}%</span>
             </div>
 
           {% when 'variant' %}
@@ -59,6 +63,36 @@
   .main-product{
     padding-bottom: 4rem;
   }
+
+  .main-product__price{
+    font-size: 24px;
+    font-weight: bold;
+    user-select: none;
+  }
+
+  .main-product__compare-at-price{
+    text-decoration: line-through;
+    color: gray;
+    font-size: 18px;
+    user-select: none;
+  }
+
+  .main_product__discount{
+    font-size: 10px;
+    padding: 0.4rem 1.2rem;
+    line-height: 1;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    user-select: none;
+  }
+
+  .main-product__prices{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
 </style>
 
 {% schema %}
@@ -75,7 +109,13 @@
     {
       "type": "description",
       "name":"Description",
-      "settings": []
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
     },
     {
       "type": "divider",
