@@ -30,6 +30,7 @@ class ProductGallery extends HTMLElement{
     }
 
     this.updateFeaturedImage()
+    this.galleryActiveUpdate()
   }
 
 
@@ -41,6 +42,8 @@ class ProductGallery extends HTMLElement{
     }
 
     this.updateFeaturedImage()
+
+    this.galleryActiveUpdate()
   }
 
 
@@ -64,7 +67,17 @@ class ProductGallery extends HTMLElement{
     this.currentIndex = index
     this.updateFeaturedImage()
   }
-  
+
+  galleryActiveUpdate(){
+    this.galleryImages.forEach((img, index)=>{
+      img.classList.remove('active')
+
+      if(index == this.currentIndex){
+        img.classList.add('active')
+      }
+    })
+  }
+
 
   disconnectedCallback(){}
 }

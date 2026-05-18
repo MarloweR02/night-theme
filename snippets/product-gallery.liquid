@@ -1,7 +1,10 @@
+
 <product-gallery class="product-gallery">
   <div class="product-gallery__storage">
     {% for product_image in product.images %}
-      {{ product_image |  image_url: width: 300 |  image_tag: class: "product-gallery__storage-image " }}
+      <img src="{{ product_image | image_url }}" width="300" height="auto" alt="" class="product-gallery__storage-image 
+      {%  if forloop.first %} active {% endif %} %}
+      ">
     {% endfor %}
   </div>
 
