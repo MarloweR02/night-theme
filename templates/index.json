@@ -16,9 +16,9 @@
         "title": "Pure Spices. Bold Flavor. Real Cooking.",
         "description": "Upgrade your meals with high-quality spices carefully selected for freshness and intensity. Perfect for home cooks and food lovers who care about real taste.",
         "button_text": "Shop Now!",
-        "button_link": "",
+        "button_link": "shopify://products/ginger",
         "button_text_2": "View Collections",
-        "button_link_2": "",
+        "button_link_2": "shopify://collections/featured",
         "overlay_enabled": true,
         "overlay_color": "#000000",
         "overlay_opacity": 0.6
