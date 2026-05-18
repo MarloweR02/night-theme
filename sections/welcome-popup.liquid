@@ -1,0 +1,96 @@
+<script src={{ "welcome-popup.js"  | asset_url }} defer></script>
+<welcome-popup class="welcome-popup" show>
+  <div class="welcome-popup__overlay"></div>
+  <div class="welcome-popup__main">
+    <button class="popup-close-trigger close-popup-button">
+      <div class="svg-wrapper">
+        {{ "icon-x-mark.svg" | inline_asset_content }}
+      </div>
+    </button>
+    <h2 class="welcome-popup__title">{{ section.settings.title }}</h2>
+    <span class="welcome-popup__description">{{ section.settings.description }}</span>
+  </div>
+</welcome-popup>
+
+<style>
+  .welcome-popup__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+.welcome-popup__title{
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.welcome-popup__description{
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.welcome-popup[show] .welcome-popup__overlay {
+  opacity: 1;
+}
+
+.welcome-popup__main{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 500px;
+  width: 500px;
+  background-color: white;
+  z-index: 220;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.welcome-popup[show] .welcome-popup__main{
+  opacity: 1;
+}
+
+.close-popup-button{
+  background-color: black;
+  border: none;
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  padding: 0.8rem;
+  border-radius: 50px;
+}
+.close-popup-button:hover > div > svg{
+  transform: rotate(180deg);
+}
+.close-popup-button > div > svg{
+  color: white;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Welcome popup",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }
+  ]
+}
+{% endschema %}
