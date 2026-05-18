@@ -26,8 +26,9 @@
       "welcome-popup": {
         "type": "welcome-popup",
         "settings": {
+          "add_show": true,
           "title": "🚧 Work in Progress",
-          "description": "<p>This is a personal project and is not yet fully complete. The current version is designed for desktop only and is not yet responsive.</p><p>The goal of this build is to create a premium and modern Shopify experience, featuring smooth animations, refined transitions, and conversion-focused (CRO) page design.</p><p>Learn more about the developer: <a href=\"https://www.linkedin.com/in/marlowe-ramirez\" target=\"_blank\" title=\"https://www.linkedin.com/in/marlowe-ramirez\">Marlowe Ramirez.</a></p>"
+          "description": "<p>This is a personal project and is not yet fully complete. The current version is designed for desktop only and is not yet responsive.</p><p>The goal of this build is to create a premium and modern Shopify expedsrience, featuring smooth animations, refined transitions, and conversion-focused (CRO) page design.</p><p>Learn more about the developer: </p><ul><li>Resume:</li><li>LinkedIn:</li><li>Online Jobs:</li><li>Portfolio:</li></ul><p></p>"
         }
       }
     },
