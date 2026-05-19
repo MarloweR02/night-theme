@@ -35,10 +35,10 @@ class CartDrawer extends HTMLElement{
 
   renderCart(e){
     this.openCart()
-    const fakeCart = document.createElement('div')
-    fakeCart =  e.detail.sections["cart-drawer"]
+    let fakeCart = document.createElement('div')
+    fakeCart.innerHTML =  e.detail.sections["cart-drawer"]
 
-    console.log(fakeCart)
+    this.cartDrawer.innerHTML = fakeCart.querySelector('.cart-drawer__main').innerHTML
     
   }
 
