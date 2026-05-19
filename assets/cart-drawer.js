@@ -13,7 +13,6 @@ class CartDrawer extends HTMLElement{
     this.openTrigger.addEventListener("click", this.openCart.bind(this))
     this.overlay.addEventListener("click", this.closeCart.bind(this))
     document.addEventListener('cart:rerender', this.renderCart.bind(this))
-    
   }
 
   openCart(){
@@ -46,13 +45,15 @@ class CartDrawer extends HTMLElement{
     fakeCount.innerHTML =  e.detail.sections["cart-count"]
 
     this.cartCount.innerHTML = fakeCount.querySelector('.cart-count').innerHTML
-
   }
 
   disconnectedCallback(){}
 }
 
 customElements.define("cart-drawer", CartDrawer)
+
+
+
 
 
 
@@ -72,15 +73,13 @@ class CartActions extends HTMLElement{
   }
 
   handleClick(e){
-    const selectedAction = e.currentTarget
-
     let formData = {
-      'id': this.dataset.lineId,
-      'quantity': selectedAction.dataset.quantity
+      'line': this.dataset.lineId,
+      'quantity': parseInt(e.currentTarget.dataset.quantity),
+      "sections": "cart-drawer,cart-count"
     }
-    
 
-    fetch(window.Shopify.routes.root + 'cart/update.js', {
+    fetch(window.Shopify.routes.root + 'cart/change.js', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -91,6 +90,7 @@ class CartActions extends HTMLElement{
       return response.json();
     })
     .then((data)=>{
+      console.log(data)      
      document.documentElement.dispatchEvent(
        new CustomEvent("cart:rerender",{
          detail:data,

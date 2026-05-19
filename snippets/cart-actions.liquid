@@ -4,7 +4,7 @@
       {{ "icon-minus.svg" | inline_asset_content }}
     </div>
     <input class="cart-item__quantity cart-item__quantity-input" type="number" value="{{ cart_item.quantity }}">
-    <div class="cart-item__quantity"  data-quantity="{{ cart_item.quantity | plus: 1 }} " increase>
+    <div class="cart-item__quantity"  data-quantity="{{ cart_item.quantity | plus: 1 }}" increase>
       {{ "icon-plus.svg" | inline_asset_content }}
     </div>
   </div>
