@@ -45,7 +45,7 @@ class CartDrawer extends HTMLElement{
     let fakeCount = document.createElement('div')
     fakeCount.innerHTML =  e.detail.sections["cart-count"]
 
-    this.cartCount.insertBefore = fakeCount.querySelector('.cart-count').innerHTML
+    this.cartCount.innerHTML = fakeCount.querySelector('.cart-count').innerHTML
 
   }
 
