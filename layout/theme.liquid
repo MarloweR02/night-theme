@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {{ content_for_header }}
-
   <script>
     window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
     window._template = {
@@ -40,6 +36,11 @@
       return data;
     })();
   </script>
+  <script type="module" fetchpriority="high" src="https://cdn.intelligems.io/esm/d05bc375fa63/bundle.js" data-em-disable async></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{ content_for_header }}
+
 
 
   {% render "fonts" %}
