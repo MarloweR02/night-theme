@@ -11,7 +11,7 @@
           {{ "icon-minus.svg" | inline_asset_content }}
         </div>
       </div>
-      <input class="quantity-selector__quantity quantity-selector__action" quantity value="1" min="1" max="{{ product.selected_or_first_available_variant.inventory_quantity }}">
+      <input class="quantity-selector__quantity quantity-selector__action" type="number" quantity value="1" min="1" max="{{ product.selected_or_first_available_variant.inventory_quantity }}">
       <div class="quantity-selector__increase quantity-selector__action" increase>
         <div class="svg-wrapper">
           {{ "icon-plus.svg" | inline_asset_content }}

@@ -1,1 +1,81 @@
-<cart-actions class="cart-item__actions">action</cart-actions>
+<cart-actions class="cart-item__actions">
+  <div class="cart-item__quantity-selector">
+    <div class="cart-item__quantity">
+      {{ "icon-minus.svg" | inline_asset_content }}
+    </div>
+    <input class="cart-item__quantity cart-item__quantity-input" type="number" value="{{ cart_item.quantity }}">
+    <div class="cart-item__quantity">
+      {{ "icon-plus.svg" | inline_asset_content }}
+    </div>
+  </div>
+  <div class="cart-item__remove">
+    {{ 'icon-trashcan.svg' | inline_asset_content }}
+  </div>
+</cart-actions>
+
+<style>
+  :root{
+    --cart-item-selector-quantity-size: 2.8rem
+  }
+
+  .cart-item__actions{
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart-item__quantity-selector{
+    display: flex;
+    align-items: center;
+  }
+
+  .cart-item__quantity > svg{
+    width: 100;
+    height: 100%;
+    color: rgb(193, 193, 193);
+    transform: scale(0.8);
+  }
+
+  .cart-item__quantity{
+    width: var(--cart-item-selector-quantity-size);
+    height: var(--cart-item-selector-quantity-size);
+    border: 1px solid rgb(188, 188, 188);
+    cursor: pointer;
+  }
+  
+  .cart-item__remove{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .cart-item__remove > svg{
+    color: rgb(208, 208, 208);
+    transition: color 0.3s ease, transform 0.3s ease;
+    width: 20px;
+    height: 20px;
+    will-change: transform;
+  }
+  .cart-item__remove:hover > svg{
+    color: rgb(200, 21, 21);
+    transform: scale(1.1);
+  }
+
+  .cart-item__quantity-input {
+    text-align: center;
+  }
+
+  /* 🔥 Remove arrows in Chrome, Safari, Edge */
+  .cart-item__quantity-input::-webkit-outer-spin-button,
+  .cart-item__quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* 🔥 Remove arrows in Firefox */
+  .cart-item__quantity-input[type="number"] {
+    -moz-appearance: textfield;
+  }
+</style>
