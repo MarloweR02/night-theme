@@ -5,6 +5,7 @@ class CartDrawer extends HTMLElement{
     this.openTrigger = document.querySelector('.cart-open-trigger')
     this.overlay = this.querySelector('.cart-drawer__overlay')
     this.body = document.querySelector('body')
+    this.cartDrawer = this.querySelector('.cart-drawer__main')
   }
 
   connectedCallback(){
@@ -32,8 +33,13 @@ class CartDrawer extends HTMLElement{
     this.body.classList.remove('no-scroll')
   }
 
-  renderCart(){
+  renderCart(e){
     this.openCart()
+    const fakeCart = document.createElement('div')
+    fakeCart =  e.detail.sections["cart-drawer"]
+
+    console.log(fakeCart)
+    
   }
 
   disconnectedCallback(){}
