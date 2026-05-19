@@ -6,6 +6,7 @@ class CartDrawer extends HTMLElement{
     this.overlay = this.querySelector('.cart-drawer__overlay')
     this.body = document.querySelector('body')
     this.cartDrawer = this.querySelector('.cart-drawer__main')
+    this.cartCount = document.querySelector('.cart-count')
   }
 
   connectedCallback(){
@@ -37,9 +38,15 @@ class CartDrawer extends HTMLElement{
     this.openCart()
     let fakeCart = document.createElement('div')
     fakeCart.innerHTML =  e.detail.sections["cart-drawer"]
-
+    
     this.cartDrawer.innerHTML = fakeCart.querySelector('.cart-drawer__main').innerHTML
     
+    
+    let fakeCount = document.createElement('div')
+    fakeCount.innerHTML =  e.detail.sections["cart-count"]
+
+    this.cartCount.insertBefore = fakeCount.querySelector('.cart-count').innerHTML
+
   }
 
   disconnectedCallback(){}
