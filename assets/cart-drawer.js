@@ -4,6 +4,7 @@ class CartDrawer extends HTMLElement{
 
     this.openTrigger = document.querySelector('.cart-open-trigger')
     this.overlay = this.querySelector('.cart-drawer__overlay')
+    this.body = document.querySelector('body')
   }
 
   connectedCallback(){
@@ -15,6 +16,7 @@ class CartDrawer extends HTMLElement{
 
   openCart(){
     this.setAttribute("open", "")
+    this.body.classList.add('no-scroll')
 
     if(this.hasAttribute('open')){
       document.addEventListener('click',(e)=>{
@@ -27,6 +29,7 @@ class CartDrawer extends HTMLElement{
 
   closeCart(){
     this.removeAttribute('open')
+    this.body.classList.remove('no-scroll')
   }
 
   renderCart(){
