@@ -1,10 +1,10 @@
 <cart-actions class="cart-item__actions" data-line-id="{{ line_index }}">
   <div class="cart-item__quantity-selector">
-    <div class="cart-item__quantity" data-quantity="{{ cart_item.quantity | minus: 1 }}" decrease>
+    <div class="cart-item__quantity cart-item__quantity-action" data-quantity="{{ cart_item.quantity | minus: 1 }}" decrease>
       {{ "icon-minus.svg" | inline_asset_content }}
     </div>
     <input class="cart-item__quantity cart-item__quantity-input" type="number" value="{{ cart_item.quantity }}">
-    <div class="cart-item__quantity"  data-quantity="{{ cart_item.quantity | plus: 1 }}" increase>
+    <div class="cart-item__quantity cart-item__quantity-action"  data-quantity="{{ cart_item.quantity | plus: 1 }}" increase>
       {{ "icon-plus.svg" | inline_asset_content }}
     </div>
   </div>
@@ -35,6 +35,7 @@
     height: 100%;
     color: rgb(193, 193, 193);
     transform: scale(0.8);
+    transition: color 0.3s ease;
   }
 
   .cart-item__quantity{
@@ -77,5 +78,9 @@
   /* 🔥 Remove arrows in Firefox */
   .cart-item__quantity-input[type="number"] {
     -moz-appearance: textfield;
+  }
+
+  .cart-item__quantity-action:hover > svg{
+    color: black;
   }
 </style>
