@@ -53,3 +53,56 @@ class CartDrawer extends HTMLElement{
 }
 
 customElements.define("cart-drawer", CartDrawer)
+
+
+
+class CartActions extends HTMLElement{
+  constructor(){
+    super()
+
+    this.increase = this.querySelector('[increase]')
+    this.decrease = this.querySelector('[decrease]')
+    this.remove = this.querySelector('[remove]')
+  }
+
+  connectedCallback(){
+    this.increase.addEventListener("click", this.handleClick.bind(this))
+    this.decrease.addEventListener("click", this.handleClick.bind(this))
+    this.remove.addEventListener("click", this.handleClick.bind(this))
+  }
+
+  handleClick(e){
+    const selectedAction = e.currentTarget
+
+    let formData = {
+      'id': this.dataset.lineId,
+      'quantity': selectedAction.dataset.quantity
+    }
+    
+
+    fetch(window.Shopify.routes.root + 'cart/update.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      return response.json();
+    })
+    .then((data)=>{
+     document.documentElement.dispatchEvent(
+       new CustomEvent("cart:rerender",{
+         detail:data,
+         bubbles:true
+       })
+     )
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+  disconnectedCallback(){}
+}
+
+customElements.define('cart-actions', CartActions)

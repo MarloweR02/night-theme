@@ -1,14 +1,14 @@
-<cart-actions class="cart-item__actions">
+<cart-actions class="cart-item__actions" data-line-id="{{ line_index }}">
   <div class="cart-item__quantity-selector">
-    <div class="cart-item__quantity">
+    <div class="cart-item__quantity" data-quantity="{{ cart_item.quantity | minus: 1 }}" decrease>
       {{ "icon-minus.svg" | inline_asset_content }}
     </div>
     <input class="cart-item__quantity cart-item__quantity-input" type="number" value="{{ cart_item.quantity }}">
-    <div class="cart-item__quantity">
+    <div class="cart-item__quantity"  data-quantity="{{ cart_item.quantity | plus: 1 }} " increase>
       {{ "icon-plus.svg" | inline_asset_content }}
     </div>
   </div>
-  <div class="cart-item__remove">
+  <div class="cart-item__remove" data-quantity="0" remove>
     {{ 'icon-trashcan.svg' | inline_asset_content }}
   </div>
 </cart-actions>

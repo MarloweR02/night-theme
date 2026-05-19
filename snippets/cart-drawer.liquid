@@ -21,7 +21,7 @@
               <div class="cart-item__prices">
                 <span class="cart-item__price">{{ item.price | money }}</span>
               </div>
-              {% render "cart-actions" cart_item:item %}
+              {% render "cart-actions" cart_item:item, line_index: forloop.index %}
             </div>
           </div>
         </div>
