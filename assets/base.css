@@ -76,6 +76,7 @@ h6{
 .fade-in-up{
   opacity: 0;
   transform: translateY(30px);
+  will-change: animation;
 }
 .fade-in-up.animate{
   animation: fadeInUp 0.65s ease-out forwards;

@@ -22,6 +22,7 @@
   #shopify-section-{{ section.id }} .marquee-track {
     display: flex;
     width: max-content;
+    will-change: transform;
     animation: marquee {{ section.settings.duration }}s linear infinite;
   }
 
