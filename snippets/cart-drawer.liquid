@@ -1,4 +1,4 @@
-<cart-drawer class="cart-drawer" open>
+<cart-drawer class="cart-drawer">
   <div class="cart-drawer__overlay"></div>
   <div class="cart-drawer__main">
     <div class="cart-drawer__main-header">
@@ -66,6 +66,7 @@
     transition: right 0.3s ease-out;
     display: flex;
     flex-direction: column;
+    will-change: right;
   }
   
   cart-drawer[open] .cart-drawer__main{
