@@ -1,0 +1,33 @@
+<div class="featured-list-collections">
+  <div class="featured-list-collections__wrapper">
+    <div class="featured-list-collections__header"></div> 
+    <div class="featured-list-collections__body">
+      {% for collection in section.settings.collections.collection %}
+        {% render "collection-card", collection:collection %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+
+</style>
+
+{% schema %}
+{
+  "name": "Feature list collections",
+  "settings": [
+    {
+      "type": "collection_list",
+      "id": "collections",
+      "label": "Collections",
+      "limit": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature list collections"
+    }
+  ]
+}
+{% endschema %}
