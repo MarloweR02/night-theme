@@ -72,7 +72,20 @@
       "settings": {
         "title": "",
         "description": "",
-        "collection": "featured"
+        "collection": "premium-spices"
+      }
+    },
+    "featured_list_collections_nhQeDa": {
+      "type": "featured-list-collections",
+      "name": "Feature list collections",
+      "settings": {
+        "header_title": "",
+        "description": "",
+        "collections": [
+          "all-spices",
+          "shop-spices-4",
+          "premium-spices"
+        ]
       }
     },
     "faq_LMGX4K": {
@@ -174,6 +187,7 @@
     "hero",
     "marquee_m4zLjR",
     "featured_collection_T96d8C",
+    "featured_list_collections_nhQeDa",
     "faq_LMGX4K",
     "marquee_RbWXXg"
   ]
