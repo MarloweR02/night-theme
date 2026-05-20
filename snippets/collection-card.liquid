@@ -1,15 +1,17 @@
-<div class="collection-card fade-in-up">
+<a href="{{ collection.url }}">
+  <div class="collection-card">
   {{ collection.featured_image |  image_url: width: 700 | image_tag  }}
   <div class="product-card__overlay-content">
     <h3></h3>
     <p></p>
   </div>
 </div>
+</a>
 
 <style>
   .collection-card{
     width: 100%;
-    height: auto;
+    height: 100%;
     position: relative;
     cursor: pointer;
     overflow: hidden;
