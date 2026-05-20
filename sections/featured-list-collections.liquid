@@ -1,5 +1,5 @@
 <div class="featured-list-collections">
-  <div class="featured-list-collections__wrapper">
+  <div class="featured-list-collections__wrapper page-width">
     <div class="featured-list-collections__head">
       <div class="featured-list-collections__head-content">
         <h2 class="featured-list-collections__header">{{ section.settings.header_title }}</h2>
@@ -16,7 +16,11 @@
 </div>
 
 <style>
-
+  .featured-list-collections__body{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 </style>
 
 {% schema %}
@@ -26,12 +30,14 @@
     {
       "type": "text",
       "id": "header_title",
-      "label": "Title"
+      "label": "Title",
+      "default": "A World of Premium Spices"
     },
     {
       "type": "inline_richtext",
       "id": "description",
-      "label": "Description"
+      "label": "Description",
+      "default": "Carefully sourced, richly aromatic, and crafted to elevate every dish with bold authentic flavor."
     },
     {
       "type": "collection_list",
