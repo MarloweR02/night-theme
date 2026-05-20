@@ -1,6 +1,12 @@
 <div class="featured-list-collections">
   <div class="featured-list-collections__wrapper">
-    <div class="featured-list-collections__header"></div> 
+    <div class="featured-list-collections__head">
+      <div class="featured-list-collections__head-content">
+        <h2 class="featured-list-collections__header">{{ section.settings.header_title }}</h2>
+        <p class="featured-list-collections__description">{{ section.settings.description }}</p>
+      </div>
+      <a href="{{ routes.collections_url }}" class="featured-list-collections__view-all">View all collections</a>
+    </div> 
     <div class="featured-list-collections__body">
       {% for collection in section.settings.collections.collection %}
         {% render "collection-card", collection:collection %}
@@ -17,6 +23,16 @@
 {
   "name": "Feature list collections",
   "settings": [
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Title"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "description",
+      "label": "Description"
+    },
     {
       "type": "collection_list",
       "id": "collections",
