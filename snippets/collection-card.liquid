@@ -1,9 +1,8 @@
 <a href="{{ collection.url }}">
-  <div class="collection-card">
+  <div class="collection-card fade-in-up">
   {{ collection.featured_image |  image_url: width: 700 | image_tag  }}
-  <div class="product-card__overlay-content">
-    <h3></h3>
-    <p></p>
+  <div class="collection-card__overlay-content">
+    <h3 class="collection-card__overlay-content__title">{{ collection.title }}</h3>
   </div>
 </div>
 </a>

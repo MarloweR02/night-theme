@@ -1,7 +1,7 @@
 <div class="featured-list-collections">
   <div class="featured-list-collections__wrapper page-width">
-    <div class="featured-list-collections__head">
-      <div class="featured-list-collections__head-content">
+    <div class="featured-list-collections__head fade-in-up">
+      <div class="featured-list-collections__head-content ">
         <h2 class="featured-list-collections__header">{{ section.settings.header_title }}</h2>
         <p class="featured-list-collections__description">{{ section.settings.description }}</p>
       </div>
@@ -18,6 +18,10 @@
 <style>
   .featured-list-collections{
     padding: 6rem 0;
+  }
+
+  .featured-list-collections__header{
+    margin-bottom: 1rem;
   }
 
   .featured-list-collections__wrapper{
@@ -43,11 +47,12 @@
     text-decoration: none;
     padding: 1rem 2rem;
     border: 1px solid transparent;
+    transition: all 0.3s ease;
   }
   
   .featured-list-collections__view-all:hover{
     background-color: white;
-    background-color: var(--primary-color);
+    color: var(--primary-color);
     border-color: var(--primary-color);
   }
 </style>
