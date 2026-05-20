@@ -19,10 +19,36 @@
   .featured-list-collections{
     padding: 6rem 0;
   }
+
+  .featured-list-collections__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
   .featured-list-collections__body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+
+  .featured-list-collections__head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .featured-list-collections__view-all{
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+  }
+  
+  .featured-list-collections__view-all:hover{
+    background-color: white;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
   }
 </style>
 
