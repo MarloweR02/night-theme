@@ -1,14 +1,25 @@
-<div class="collection-card">
+<div class="collection-card fade-in-up">
   {{ collection.featured_image |  image_url: width: 700 | image_tag  }}
+  <div class="product-card__overlay-content">
+    <h3></h3>
+    <p></p>
+  </div>
 </div>
 
 <style>
   .collection-card{
     width: 100%;
     height: auto;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
   }
   .collection-card > img {
     width: 100%;
     height: 100%;
+    transition: transform 0.3s ease;
+  }
+  .collection-card:hover > img {
+    transform: scale(1.03);
   }
 </style>
