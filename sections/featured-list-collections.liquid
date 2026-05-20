@@ -8,7 +8,7 @@
       <a href="{{ routes.collections_url }}" class="featured-list-collections__view-all">View all collections</a>
     </div> 
     <div class="featured-list-collections__body">
-      {% for collection in section.settings.collections.collection %}
+      {% for collection in section.settings.collections%}
         {% render "collection-card", collection:collection %}
       {% endfor %}
     </div>
