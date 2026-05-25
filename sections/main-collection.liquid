@@ -1,4 +1,4 @@
-{% render "collection-filter" collection:collection %}
+{% render "collection-filter" collection: collection %}
 <div class="main-collection__filter">
   <div class="main-collection__filter-wrapper page-width">
     <div class="main-collection__filter-left">
@@ -18,43 +18,95 @@
     <div class="main-collection__content">
       {% paginate collection.products by 12 %}
         {% for product in collection.products %}
-          {% render 'product-card' product:product %}
+          {% render 'product-card' product: product %}
         {% endfor %}
       {% endpaginate %}
     </div>
   </div>
 </div>
 
+
 <style>
-  .main-collection__filter{
-    border-bottom: 1px solid rgb(193, 193, 193);
-    padding: 0.8rem 0;
+  /* Desktop styles */
+  @media (min-width: 1025px) {
+    .main-collection__filter {
+      border-bottom: 1px solid rgb(193, 193, 193);
+      padding: 0.8rem 0;
+    }
+
+    .main-collection__filter-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+    .main-collection {
+      padding: 6rem 0;
+    }
+
+    .main-collection__content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
   }
 
-  .main-collection__filter-wrapper{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  /* Tablet styles */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .main-collection__filter {
+      border-bottom: 1px solid rgb(193, 193, 193);
+      padding: 0.8rem 0;
+    }
+
+    .main-collection__filter-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+    .main-collection {
+      padding: 6rem 0;
+    }
+
+    .main-collection__content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
   }
 
+  /* Mobile styles */
+  @media (max-width: 767px) {
+    .main-collection__filter {
+      border-bottom: 1px solid rgb(193, 193, 193);
+      padding: 0.8rem 0;
+    }
+
+    .main-collection__filter-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
 
-  .main-collection{
-    padding: 6rem 0;
-  }
+    .main-collection {
+      padding: 6rem 0;
+    }
 
-  .main-collection__content{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 2rem;
+    .main-collection__content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
   }
 </style>
 
+
 {% schema %}
-{
-  "name": "Collection",
-  "settings": [
-    
-    ]
-}
+  {
+    "name": "Collection",
+    "settings": []
+  }
 {% endschema %}
