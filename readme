@@ -13,3 +13,14 @@
   .accordion-checkbox:checked ~ .accordion-answer__container {
     grid-template-rows: 1fr;
   }
+
+  <style>
+  /* Desktop styles */
+  @media (min-width: 1025px) {}
+
+  /* Tablet styles */
+  @media (min-width: 768px) and (max-width: 1024px) {}
+
+  /* Mobile styles */
+  @media (max-width: 767px) {}
+</style>

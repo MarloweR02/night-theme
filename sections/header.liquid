@@ -4,101 +4,215 @@
       <div class="header__logo">
         <a href="{{ routes.root_url }}">
           {% if settings.logo != blank %}
-          {{ settings.logo |  image_url: width: settings.logo_width | image_tag  }}
-        {% else %}
-          <h2>{{ shop.name }}</h2>
-        {% endif %}
+            {{ settings.logo | image_url: width: settings.logo_width | image_tag }}
+          {% else %}
+            <h2 class="header__log-store-name">{{ shop.name }}</h2>
+          {% endif %}
         </a>
       </div>
       {% if section.settings.menu.links != blank %}
-      <ul class="header__menus">
-        {% for link in section.settings.menu.links %}
-          <li class="header__menu-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
-        {% endfor %}
-      </ul> 
+        <ul class="header__menus">
+          {% for link in section.settings.menu.links %}
+            <li class="header__menu-item">
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
       {% endif %}
     </div>
     <div class="header__right">
       <div class="svg-wrapper search-open-trigger">{{ "icon-magnifying-glass.svg" | inline_asset_content }}</div>
-      <a href="{{  routes.account_login_url }}"><div class="svg-wrapper">{{ "icon-user.svg" | inline_asset_content }}</div></a>
+      <a href="{{  routes.account_login_url }}">
+        <div class="svg-wrapper">{{ "icon-user.svg" | inline_asset_content }}</div>
+      </a>
       <div class="svg-wrapper cart-open-trigger">{{ "icon-shopping-cart.svg" | inline_asset_content }}
-        {% render "cart-count", color: section.settings.bg_color, background_color: section.settings.text_color%}
+        {% render "cart-count"
+          , color: section.settings.bg_color
+          , background_color: section.settings.text_color %}
       </div>
     </div>
   </div>
 </div>
 
 <style>
-  .header{
-    padding: 1.2rem 0;
-    background-color: {{ section.settings.bg_color }};
+  /* Desktop styles */
+  @media (min-width: 1025px) {
+    .header {
+      padding: 1.2rem 0;
+      background-color: {{ section.settings.bg_color }};
+    }
+
+    .header__logo > a {
+      color: {{ section.settings.text_color }};
+      text-decoration: none;
+    }
+
+    .header__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-open-trigger {
+      position: relative;
+    }
+
+    .header__right .svg-wrapper > svg {
+      color: {{ section.settings.text_color }};
+    }
+
+    .header__left {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+    }
+
+    .header__menus {
+      list-style: none;
+      display: flex;
+      gap: 4rem;
+    }
+    .header__menus > li > a {
+      color: {{ section.settings.text_color }};
+    }
+
+    .header__menu-item > a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .header__right {
+      display: flex;
+      gap: 0.8rem;
+    }
   }
 
-  .header__logo > a {
-    color: {{ section.settings.text_color }};
-    text-decoration: none;
+  /* Tablet styles */
+  @media (min-width: 768px) and (max-width: 1024px) {
+
+    .header {
+      padding: 1.2rem 0;
+      background-color: {{ section.settings.bg_color }};
+    }
+
+    .header__logo > a {
+      color: {{ section.settings.text_color }};
+      text-decoration: none;
+    }
+
+    .header__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-open-trigger {
+      position: relative;
+    }
+
+    .header__right .svg-wrapper > svg {
+      color: {{ section.settings.text_color }};
+    }
+
+    .header__left {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+    }
+
+    .header__menus {
+      display: none;
+    }
+      
+    .header__menus > li > a {
+      color: {{ section.settings.text_color }};
+    }
+
+    .header__menu-item > a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .header__right {
+      display: flex;
+      gap: 0.8rem;
+    }
   }
 
-  .header__inner{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  /* Mobile styles */
+  @media (max-width: 767px) {
 
-  .cart-open-trigger{
-    position: relative;
-  }
-  
-  .header__right .svg-wrapper > svg {
-    color: {{ section.settings.text_color }};
-  }
+    .header {
+      padding: 1.2rem 0;
+      background-color: {{ section.settings.bg_color }};
+    }
 
-  .header__left{
-    display: flex;
-    align-items: center;
-    gap: 6rem;
-  }
+    .header__logo > a {
+      color: {{ section.settings.text_color }};
+      text-decoration: none;
+    }
 
-  .header__menus{
-    list-style: none;
-    display: flex;
-    gap: 4rem;
-  }
-  .header__menus > li > a {
-    color: {{ section.settings.text_color }};
-  }
+    .header__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  .header__menu-item > a {
-    color: inherit;
-    text-decoration: none;
-  }
+    .cart-open-trigger {
+      position: relative;
+    }
 
-  .header__right{
-    display: flex;
-    gap: 0.8rem;
+    .header__right .svg-wrapper > svg {
+      color: {{ section.settings.text_color }};
+    }
+
+    .header__left {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+    }
+
+    .header__menus {
+      display: none;
+    }
+    .header__menus > li > a {
+      color: {{ section.settings.text_color }};
+    }
+
+    .header__menu-item > a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .header__right {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .header__log-store-name{
+      font-size: 20px;
+    }
   }
 </style>
 
 {% schema %}
-{
-  "name": "Header",
-  "settings": [
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background color"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color"
-    },
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "Main menu",
-      "default":"main-menu"
-    }
-  ]
-}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color"
+      }, {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Main menu",
+        "default": "main-menu"
+      }
+    ]
+  }
 {% endschema %}

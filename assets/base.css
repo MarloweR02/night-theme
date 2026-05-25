@@ -21,6 +21,14 @@ body{
   padding: 0 2rem;
 }
 
+@media (max-width: 768px) {
+  .page-width{
+    max-width: var(--page-width);
+    margin: 0 auto ;
+    padding: 0 1.6rem;
+  }
+}
+
 h1,
 h2,
 h3,
