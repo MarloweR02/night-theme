@@ -1,32 +1,87 @@
 <product-card-atc class="product-card-atc">
-  {% form 'product', product %}
-    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-    <input type="hidden" name="quantity" value="1">
+  {% form 'product'
+    , product %}
+    <input
+      type="hidden"
+      name="id"
+      value="{{ product.selected_or_first_available_variant.id }}">
+    <input
+      type="hidden"
+      name="quantity"
+      value="1">
     <button class="product-card-atc__button">
       <div class="svg-wrapper">
         {{ "icon-shopping-bag.svg" | inline_asset_content }}
-      </div>Add to cart 
+      </div>Add to cart
     </button>
   {% endform %}
 </product-card-atc>
 
 <style>
-  .product-card-atc__button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    color: white;
-    background-color: #4a53ff;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-    padding: 0.8rem 2rem;
-    cursor: pointer;
-    font-weight: bold;
+  /* Desktop styles */
+  @media (min-width: 1025px) {
+    .product-card-atc__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      color: white;
+      background-color: #4a53ff;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      padding: 0.8rem 2rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .product-card-atc__button:hover {
+      background-color: transparent;
+      color: #4a53ff;
+      border: 1px solid #4a53ff;
+    }
   }
-  .product-card-atc__button:hover{
-    background-color: transparent;
-    color: #4a53ff;
-    border: 1px solid #4a53ff;
+
+  /* Tablet styles */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .product-card-atc__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      color: white;
+      background-color: #4a53ff;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      padding: 0.8rem 2rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .product-card-atc__button:hover {
+      background-color: transparent;
+      color: #4a53ff;
+      border: 1px solid #4a53ff;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 767px) {
+    .product-card-atc__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      color: white;
+      background-color: #4a53ff;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      padding: 0.8rem 2rem;
+      cursor: pointer;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .product-card-atc__button:hover {
+      background-color: transparent;
+      color: #4a53ff;
+      border: 1px solid #4a53ff;
+    }
   }
 </style>
